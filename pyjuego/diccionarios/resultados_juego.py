@@ -31,8 +31,7 @@ def completar_resultados(resultados:dict,numero_sala:int, puntaje_sala:int, punt
      puntaje_total: acumulador de puntaje por salas
     """
     resultados["resultados_salas"].append([numero_sala, puntaje_sala, puntaje_total])
-
-#combinar fila y columna por dibujar_matriz
+    
 def dibujar_encabezados(resultados:dict, fuente:pygame.font.Font, superficie:pygame.Surface, ancho:int)-> None:
     """dibujar las filas de encabezados del cuadro de resultados
     Args:

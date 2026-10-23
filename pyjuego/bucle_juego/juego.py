@@ -21,7 +21,7 @@ def manejo_click_respuesta(botones:list,posicion:tuple)-> str:
     respuesta = ""
     for boton in botones:
         if colision(boton, posicion):
-            respuesta = boton["texto"][0]#["texto"][0] saca solo a,b,c o d respectivamente
+            respuesta = boton["texto"][0]
     return respuesta
 
 def manejo_teclado_eventos(evento:pygame.event.Event) -> str:
@@ -31,7 +31,6 @@ def manejo_teclado_eventos(evento:pygame.event.Event) -> str:
     Returns: 
       accion segun evento presionado 
     """
-    #manejo de eventos del teclado
     accion = ""
     if evento.key == pygame.K_ESCAPE:
         accion = "salir"
@@ -62,7 +61,6 @@ def guardar_puntuacion_juego(juego:bool,nombre_jugador:str,estado_final:bool,pun
      estado_final: si gano o perdio la partida
      puntuacion: puntaje del jugador
     """
-    #si el juego termino guarda la puntuacion del jugador
     if juego:
       guardar_puntaje(nombre_jugador,estado_final,puntuacion)
 
@@ -91,7 +89,6 @@ def jugar(nombre_jugador:str) -> dict:
     fondo = pygame.image.load("pyjuego/imagenes/juego_imagenes/castle2.png").convert()
     fondo_escalado = pygame.transform.scale(fondo,(1380,920))
 
-    # definir pregunta, opciones  y variantes
     numero_pregunta = elegir_pregunta(preguntas)
     pregunta_formateada = formatear_texto(preguntas[numero_pregunta]["pregunta"])
 
@@ -151,8 +148,7 @@ def jugar(nombre_jugador:str) -> dict:
                     puntaje_total = puntuacion
                     completar_resultados(resultados,sala,preguntas[numero_pregunta]["valor_puntaje"],puntaje_total)
 
-                    #victoria = lambda preguntas_correctas: True if preguntas_correctas >= 4 else False #lambda
-                    if victoria(preguntas_correctas): #revisar lambda
+                    if victoria(preguntas_correctas):
                         juego_terminado = True
                         estado_final = True
                     else:   
@@ -162,7 +158,7 @@ def jugar(nombre_jugador:str) -> dict:
                         intentos_por_sala = 2
                         sala +=1
                         resetear_cronometro(cronometro)
-                #poner en funcion
+               
                 elif respuesta_final != "":
                    intentos_por_sala -= 1
                    respuesta_final = ""

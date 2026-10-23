@@ -126,7 +126,6 @@ def actualizar_boton(boton: dict, pantalla: pygame.Surface, mouse_pos: tuple) ->
     color = boton_color_colision(boton, mouse_pos)
     dibujar_boton(boton,color,pantalla)
 
-#revisa si es una lista o diccionario
 def dibujar_botones(botones:list | dict, pantalla: pygame.Surface, mouse_pos: tuple)-> None:
     """dibuja una lista de botones o solo uno, revisando si es una lista
     Args:
@@ -134,7 +133,7 @@ def dibujar_botones(botones:list | dict, pantalla: pygame.Surface, mouse_pos: tu
      pantalla: superficie donde se dibuja
      mouse_pos: posicion (x,y) del mouse
     """
-    if type(botones) == list: # revisa que sea una lista
+    if type(botones) == list: 
         for boton in botones:
             actualizar_boton(boton,pantalla,mouse_pos)
     else: 

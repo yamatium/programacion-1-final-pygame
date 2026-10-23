@@ -56,8 +56,6 @@ def crear_botones_opciones(preguntas:dict,pregunta_aleatoria:int) -> list:
     Returns:
      list:lista de botones creados
     """ 
-    #crea los botones donde van las respuestas
-    #regresa una lista de botones
     cantidad = 4
     lista = []
     opciones = preguntas[pregunta_aleatoria]["opciones"]

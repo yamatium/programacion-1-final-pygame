@@ -16,8 +16,6 @@ def elejir_numero(inicio:int , fin: int)-> int:
     Returns:
       int: numero elejido
     """
-    #elije un numero aleatorio
-    #regresa un numero int
     numero_elejido = random.randint(inicio,fin)
     return numero_elejido
 

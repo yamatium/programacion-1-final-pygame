@@ -23,8 +23,8 @@ def puntuacion()-> None:
     boton_subir = crear_boton(1100, 150, 60, 50, "gray", "^")
     boton_bajar = crear_boton(1100, 500, 60, 50, "gray", "v")
 
-    posicion_scroll = 0 # posicion actual de scroll
-    velocidad_scroll = 50 # posicion y que se cambia
+    posicion_scroll = 0 
+    velocidad_scroll = 50 
     lista_area = pygame.Rect(0, 140, 1280, 470) 
     botones = [boton_salir, boton_borrar, boton_subir, boton_bajar, boton_musica]
     puntajes = cargar_puntuacion()
@@ -66,12 +66,12 @@ def puntuacion()-> None:
 
         if not puntajes:
            pantalla.blit(puntuacion_Vacia,(330,380))    
-        pantalla.set_clip(lista_area) # define el area a usar el scrolling
+        pantalla.set_clip(lista_area) 
 
         for boton in botones_puntaje:
             boton = aplicar_scroll(boton, posicion_scroll)
             dibujar_botones(boton, pantalla, (mx, my))
 
-        pantalla.set_clip(None)# saca la restriccion de superficie para que todos los otros elementos se puedan redibujar en cada frame
+        pantalla.set_clip(None)
         pygame.display.flip()
         clock.tick(60)

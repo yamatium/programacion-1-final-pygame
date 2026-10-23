@@ -16,7 +16,6 @@ def respuesta_correcta() -> None:
     botones = [boton_musica,boton_continuar]
     bien = pygame.image.load("pyjuego/imagenes/juego_imagenes/thumbs-up.png").convert()
     bien_scale = pygame.transform.scale(bien, (498,390))
-    #convert cuando no necesitas transparencia, convert_alpha cuando si
     fondo_puerta = pygame.image.load("pyjuego/imagenes/juego_imagenes/doorTrans.png").convert_alpha()
     fondo_real = pygame.image.load("pyjuego/imagenes/juego_imagenes/campo2.png").convert()
     fondo_scale = pygame.transform.scale(fondo_puerta, (1500,700))

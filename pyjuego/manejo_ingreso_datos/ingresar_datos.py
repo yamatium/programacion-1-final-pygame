@@ -51,7 +51,6 @@ def validar_numero(caracter: str)-> str:
     """
     resultado = ""
     if len(caracter) == 1 and validar_ascii_numero(caracter):
-        #len(caracter) ==1 evita que flechas o no letras crasheen
         resultado = caracter
     return resultado
 
@@ -97,7 +96,7 @@ def ingreso_datos()->str:
 
     boton_continuar = crear_boton(480, 620, 200, 70, "white", "Continuar")
     botones = [boton_continuar]
-    color_nombre = lambda texto_activo: "white" if texto_activo else "darkgray" #uso de funcion lambda
+    color_nombre = lambda texto_activo: "white" if texto_activo else "darkgray" 
     rect_ingreso = pygame.Rect(470, 100, 220, 40)
     texto_usuario = ''
     texto_activo = False

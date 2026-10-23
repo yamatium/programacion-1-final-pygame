@@ -84,7 +84,7 @@ def ingresar_jugadores() -> int | None:
     numero_activo = False
     botones = [boton_continuar,boton_salir,boton_musica]
 
-    resultado = None #para salir al menu
+    resultado = None 
     running = True
     while running:
         for event in pygame.event.get():

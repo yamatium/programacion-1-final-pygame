@@ -133,7 +133,6 @@ def manejar_click(botones:list,evento:tuple)-> str:
         accion = "salir"
     elif colision(botones[1],evento):
         salir_sonido()
-        #borrar_puntuacion()
         accion = "borrar"
     elif colision(botones[2], evento):
         accion = "subir"
